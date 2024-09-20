@@ -8,7 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import android.widget.Toast
 import android.view.View
 import android.widget.EditText
-import java.math.*
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +23,10 @@ class MainActivity : AppCompatActivity() {
     }
     fun formula(view: View)
     {
+        if (findViewById<EditText>(R.id.editTextNumber).text.toString().equals(""))
+        {
+            return
+        }
         val x = findViewById<EditText>(R.id.editTextNumber).text.toString().toDouble()
         var y = 1.0
         for(n in 1..7)
